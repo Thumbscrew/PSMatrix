@@ -16,7 +16,7 @@
     $creds = Get-Credential
     $token = Get-LoginToken -ServerUrl "https://matrix.example.com" -Credentials $creds
 #>
-function Get-MatrixLoginToken {
+function New-MatrixAccessToken {
     param(
         [Parameter(Mandatory)]
         [string]$ServerUrl,
