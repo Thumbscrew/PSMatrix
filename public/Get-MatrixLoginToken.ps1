@@ -42,5 +42,5 @@ function Get-MatrixLoginToken {
 
     $token = $res.access_token | ConvertTo-SecureString -AsPlainText
 
-    return $res.access_token
+    return $token
 }
