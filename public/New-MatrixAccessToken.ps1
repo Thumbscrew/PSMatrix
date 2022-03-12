@@ -11,6 +11,9 @@
     .Parameter Credentials
     PSCredentials Object that contains the Matrix Username and Password for the user you wish to log in with.
 
+    .Parameter DeviceDisplayName
+    Display name to assign to this Access token.
+
     .Example
     # Create a PSCredentials Object
     $creds = Get-Credential
@@ -22,7 +25,10 @@ function New-MatrixAccessToken {
         [string]$ServerUrl,
 
         [Parameter(Mandatory)]
-        [PSCredential]$Credentials
+        [PSCredential]$Credentials,
+
+        [Parameter(Mandatory=$false)]
+        [string]$DeviceDisplayName="PSMatrix"
     )
 
     $apiPath = "_matrix/client/v3/login"
@@ -35,7 +41,7 @@ function New-MatrixAccessToken {
         }
         type = "m.login.password"
         password = $Credentials.Password | ConvertFrom-SecureString -AsPlainText
-        initial_device_display_name = "PSMatrix"
+        initial_device_display_name = $DeviceDisplayName
     } | ConvertTo-Json
 
     $res = Invoke-RestMethod -Uri "$ServerUrl/$apiPath" -Method $apiMethod -Body $reqBody
