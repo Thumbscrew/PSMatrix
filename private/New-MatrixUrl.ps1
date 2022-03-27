@@ -7,5 +7,5 @@ function New-MatrixUrl {
         [string]$ApiPath
     )
 
-    return $ServerUrl.Trim("/") + $ApiPath
+    return $ServerUrl.Trim("/") + "/" + $ApiPath
 }
