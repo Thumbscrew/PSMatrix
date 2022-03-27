@@ -24,7 +24,7 @@ function Remove-MatrixAccessToken {
         [SecureString]$AccessToken
     )
 
-    $apiPath = "_matrix/client/v3/logout"
+    $url = New-MatrixUrl -ServerUrl $ServerUrl -ApiPath "_matrix/client/v3/logout"
     $apiMethod = "Post"
 
     $headers = @{
@@ -32,7 +32,7 @@ function Remove-MatrixAccessToken {
     }
 
     Try {
-        Invoke-RestMethod -Uri "$ServerUrl/$apiPath" -Method $apiMethod -Headers $headers
+        Invoke-RestMethod -Uri $url -Method $apiMethod -Headers $headers
         return $true
     }
     Catch {

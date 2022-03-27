@@ -31,7 +31,7 @@ function New-MatrixAccessToken {
         [string]$DeviceDisplayName="PSMatrix"
     )
 
-    $apiPath = "_matrix/client/v3/login"
+    $url = New-MatrixUrl -ServerUrl $ServerUrl -ApiPath "_matrix/client/v3/login"
     $apiMethod = "Post"
 
     $reqBody = @{
@@ -44,7 +44,7 @@ function New-MatrixAccessToken {
         initial_device_display_name = $DeviceDisplayName
     } | ConvertTo-Json
 
-    $res = Invoke-RestMethod -Uri "$ServerUrl/$apiPath" -Method $apiMethod -Body $reqBody
+    $res = Invoke-RestMethod -Uri $url -Method $apiMethod -Body $reqBody
 
     $token = $res.access_token | ConvertTo-SecureString -AsPlainText
 
