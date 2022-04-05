@@ -54,6 +54,7 @@ function Get-MatrixRoomMessages {
         $res = Invoke-RestMethod -Uri $url -Headers $headers
     } catch {
         Write-Error $_
+        return
     }
 
     $events = $res.rooms.join.($RoomId).timeline.events
