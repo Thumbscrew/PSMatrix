@@ -70,6 +70,7 @@ function Get-MatrixRoomMessages {
             FormattedBody = $_.content.formatted_body
             MsgType = $_.content.msgtype
         }
+        $formattedEvent.PSObject.TypeNames.Insert(0, 'MatrixMessage')
 
         $formattedEvents += $formattedEvent
     }

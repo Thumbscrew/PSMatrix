@@ -9,7 +9,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'PSMatrix.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.0.1'
@@ -60,7 +60,9 @@ PowerShellVersion = '7.0'
 # ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
-# TypesToProcess = @()
+TypesToProcess = @(
+    'PSMatrixTypes.ps1xml'
+)
 
 # Format files (.ps1xml) to be loaded when importing this module
 # FormatsToProcess = @()
