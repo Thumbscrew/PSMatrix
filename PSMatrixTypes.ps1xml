@@ -2,30 +2,22 @@
   <Type>
     <Name>MatrixMessage</Name>
     <Members>
-      <NoteProperty>
-        <Name>EventID</Name>
-        <Value>EventID</Value>
-      </NoteProperty>
-      <NoteProperty>
-        <Name>Sender</Name>
-        <Value>Sender</Value>
-      </NoteProperty>
-      <NoteProperty>
-        <Name>Body</Name>
-        <Value>Body</Value>
-      </NoteProperty>
-      <NoteProperty>
-        <Name>Format</Name>
-        <Value>Format</Value>
-      </NoteProperty>
-      <NoteProperty>
-        <Name>FormattedBody</Name>
-        <Value>FormattedBody</Value>
-      </NoteProperty>
-      <NoteProperty>
-        <Name>MsgType</Name>
-        <Value>MsgType</Value>
-      </NoteProperty>
+      <MemberSet>
+        <Name>PSStandardMembers</Name>
+        <Members>
+          <PropertySet>
+            <Name>DefaultDisplayPropertySet</Name>
+            <ReferencedProperties>
+              <Name>EventID</Name>
+              <Name>Sender</Name>
+              <Name>Body</Name>
+              <Name>Format</Name>
+              <Name>FormattedBody</Name>
+              <Name>MsgType</Name>
+            </ReferencedProperties>
+          </PropertySet>
+        </Members>
+      </MemberSet>
     </Members>
   </Type>
 </Types>

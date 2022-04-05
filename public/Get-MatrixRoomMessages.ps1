@@ -16,7 +16,6 @@ function Get-MatrixRoomMessages {
         [int]$Limit = 50
     )
 
-    Write-Debug "URL: $url"
     $headers = Get-MatrixAuthHeaders -AccessToken $AccessToken
 
     try {
@@ -50,6 +49,8 @@ function Get-MatrixRoomMessages {
             -ApiPath ("_matrix/client/v3/sync" `
             + "?filter=$filterId" `
             + "&full_state=true&set_presence=offline")
+
+        Write-Debug "URL: $url"
 
         $res = Invoke-RestMethod -Uri $url -Headers $headers
     } catch {
