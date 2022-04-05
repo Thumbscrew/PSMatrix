@@ -12,6 +12,7 @@ git clone https://github.com/Thumbscrew/PSMatrix.git
 2. Import module:
 
 ```powershell
+cd PSMatrix
 Import-Module ./PSMatrix
 ```
 
