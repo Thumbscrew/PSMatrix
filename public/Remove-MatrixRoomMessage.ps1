@@ -1,3 +1,28 @@
+<#
+    .Synopsis
+    Redact a Matrix message in a given Room ID.
+
+    .Description
+    Redact a Matrix message in a given Room ID from _matrix/client/v3/rooms/{roomId}/redact/{eventId}/{txnId}. See https://spec.matrix.org/v1.2/client-server-api/#put_matrixclientv3roomsroomidredacteventidtxnid.
+
+    .Parameter ServerUrl
+    URL for the Matrix server to log into, for example "https://matrix.example.com".
+
+    .Parameter AccessToken
+    A SecureString containing the Matrix access token.
+
+    .Parameter RoomId
+    The Matrix room ID to redact the message from.
+
+    .Parameter Message
+    The MatrixMessage object that contains the Event ID to redact.
+
+    .Parameter Reason
+    The reason to provide for the redaction (optional).
+
+    .Example
+    Remove-MatrixRoomMessage -ServerUrl $server -AccessToken $token -RoomId "!ehXvUhWNASUkSLvAGP:matrix.org" -Message $message -Reason "Redacted by PSMatrix"
+#>
 function Remove-MatrixRoomMessage {
     param (
         [Parameter(Mandatory)]
