@@ -9,7 +9,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'PSMatrix.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.0.1'
@@ -60,7 +60,9 @@ PowerShellVersion = '7.0'
 # ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
-# TypesToProcess = @()
+TypesToProcess = @(
+    'PSMatrixTypes.ps1xml'
+)
 
 # Format files (.ps1xml) to be loaded when importing this module
 # FormatsToProcess = @()
@@ -74,7 +76,8 @@ FunctionsToExport = @(
     'Remove-MatrixAccessToken',
     'Get-MatrixJoinedRooms',
     'Get-MatrixJoinedMembers',
-    'Get-MatrixRoomId'
+    'Get-MatrixRoomId',
+    'Get-MatrixRoomMessages'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
